@@ -2,27 +2,54 @@ import PropTypes from 'prop-types';
 
 
 const GuessWords = props => {
+    let contents;
 
-    if (props.guessWords.length === 0) {
-        return (
-            <div data-test="component-guessed-words">
+    if (props.guessedWords.length === 0) {
+        contents = (
+            <div data-test="guessed-words">
                 <span data-test="guess-instructions">
                     GuessWord 게임을 시작해보세요
-                </span>
+            </span>
             </div>
         );
     } else {
-        return (
-            <div data-test="component-guessed-words">
+        const guessedWordsRows = props.guessedWords.map((word, index) => {
+            return (
+                <tr key={index} data-test="guessed-word" >
+                    <td>{word.guessedWord}</td>
+                    <td>{word.letterMatchCount}</td>
+                </tr>
+            );
+        });
+        contents = (
+            <div data-test="guessed-words">
+                <h3>Guessed Words</h3>
+                <table className="table table-sm">
+                    <thead className="table-light">
+                        <tr>
+                            <th>Guess</th>
+                            <th>Matching Letters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {guessedWordsRows}
+                    </tbody>
+                </table>
             </div>
         );
     }
 
+
+    return (
+        <div className="component-guessed-words" data-test="component-guessed-words">
+            {contents}
+        </div>
+    );
 };
 
 GuessWords.propTypes = {
-    guessWords: PropTypes.arrayOf(PropTypes.shape({
-        guessWord: PropTypes.string.isRequired,
+    guessedWords: PropTypes.arrayOf(PropTypes.shape({
+        guessedWord: PropTypes.string.isRequired,
         letterMatchCount: PropTypes.number.isRequired
     })).isRequired
 };

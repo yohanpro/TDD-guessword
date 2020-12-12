@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { findByTestAttr, checkProps } from '../../tests/testUtil';
-import GuessWords from '../GuessWords';
+import GuessedWords from '.';
 
 
 
@@ -13,12 +13,12 @@ const defaultProps = {
 
 const setup = (props = {}) => {
     const setupProps = { ...defaultProps, ...props };
-    return shallow(<GuessWords {...setupProps} />);
+    return shallow(<GuessedWords {...setupProps} />);
 };
 
 
 test("필요한 prop이 전달되었을 때 오류 없이 렌더링", () => {
-    checkProps(GuessWords, defaultProps);
+    checkProps(GuessedWords, defaultProps);
 });
 
 describe("아직 어떤 단어도 guess 하지 않았을 경우", () => {

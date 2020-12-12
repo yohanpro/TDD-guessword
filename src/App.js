@@ -1,12 +1,12 @@
 import Congrats from './components/Congrats';
-import GuessWords from './components/GuessWords';
+import GuessedWords from './components/GuessedWords';
 
 function App() {
   return (
     <div className="container">
       <h1>Jotto</h1>
       <Congrats success={true} />
-      <GuessWords guessedWords={[{
+      <GuessedWords guessedWords={[{
         guessedWord: 'train', letterMatchCount: 3
       }]} />
     </div>

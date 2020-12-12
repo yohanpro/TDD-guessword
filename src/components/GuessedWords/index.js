@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 
-const GuessWords = props => {
+const GuessedWords = props => {
     let contents;
 
     if (props.guessedWords.length === 0) {
@@ -47,11 +47,11 @@ const GuessWords = props => {
     );
 };
 
-GuessWords.propTypes = {
+GuessedWords.propTypes = {
     guessedWords: PropTypes.arrayOf(PropTypes.shape({
         guessedWord: PropTypes.string.isRequired,
         letterMatchCount: PropTypes.number.isRequired
     })).isRequired
 };
 
-export default GuessWords;
+export default GuessedWords;

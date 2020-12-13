@@ -5,3 +5,5 @@ export const getLetterMatchCount = (guessedWord, secretWord) => {
     return [...secretLetterSet].filter(letter => guessedLetterSet.has(letter)).length;
 };
 
+export const delay = (fn, wait, ...args) => setTimeout(fn, wait, ...args);
+

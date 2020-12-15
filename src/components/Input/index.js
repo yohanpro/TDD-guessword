@@ -15,7 +15,6 @@ class Input extends Component {
                     className="btn btn-primary mb-2"
                     type="submit"
                     data-test="submit-button"
-
                 >
                     Submit
                 </button>
@@ -26,9 +25,7 @@ class Input extends Component {
 
         return (
             <div data-test="component-input">
-
                 {contents}
-
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { findByTestAttr, checkProps } from '../../tests/testUtil';
-import GuessedWords from '.';
+import GuessedWords from './index';
 
 
 
